@@ -4,7 +4,8 @@ export const loginReducer = (state = {}, action) => {
         case 'login':
             return {
                 isAuth: true,
-                user: action.payload,
+                user: action.payload.username,
+                varios: action.payload.varios,
             };
         case 'logout':
             return {

@@ -18,7 +18,7 @@ export const LogoutPage = ({ handlerLogout }) => {
                             <div className="modal-footer">
                                 <button  className="btn btn-primary"
                                     type="submit">
-                                    Logoutss
+                                    Logout
                                 </button>
                             </div>
                         </form>        
