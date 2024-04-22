@@ -1,23 +1,20 @@
 import { useReducer} from 'react';
 import { loginReducer } from '../reducers/loginReducers';
-
+import { loginUser } from '../../../auth/services/authService';
+import Swal from 'sweetalert2';
 
 const initialLogin = JSON.parse (sessionStorage.getItem ('login')) || {
     isAuth: false,
     user: undefined,
-    varios: '',
 }
 
 export const useAuth = ()  => {
     const [login, dispatch] = useReducer (loginReducer, initialLogin);
 
-    console.log ("useAuth: login ", login)
-    const handlerLogin = ({username, password}) => {
-        console.log ("handlerLogin")
-        const isLogin = true; //loginUser ({username, password});
+    const handlerLogin = ({user, password}) => {
+        const isLogin = loginUser ({user, password});
         if  (isLogin) {
-            console.log ("useAuth -> handlerLogin = true")
-            const user = { username: 'admin-', varios: 'campo'}
+            //const user = { username: user, varios: 'campo'}
             dispatch ({
                 type: 'login',
                 payload: user,

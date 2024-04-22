@@ -1,5 +1,4 @@
 export const loginReducer = (state = {}, action) => {
-    console.log ("track loginReducers.js")
     switch (action.type) {
         case 'login':
             return {

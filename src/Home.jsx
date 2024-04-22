@@ -6,11 +6,6 @@ import { LogoutPage } from "./components/auth/pages/LogoutPage";
 export const Home = () => {
 
     const { login, handlerLogin, handlerLogout } = useAuth ();
-    console.log ("login: ", login);
-
-
-
-
 
     return (
         <>
