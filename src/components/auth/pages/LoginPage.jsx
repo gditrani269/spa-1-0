@@ -45,6 +45,8 @@ export const LoginPage = ({ handlerLogin }) => {
         console.log ("Hora: ", showTime);
         console.log ("values: ", values);
         handlerLogin ({username: values.email, password: values.password})
+        //handlerLogin ({username: 'admin', password: '12345'})
+        handlerLogin (values)
 
         //handlerLogin ({username: 'admin', password: '12345'})
 
