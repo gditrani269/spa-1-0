@@ -4,9 +4,9 @@ import { LoginPage } from "./components/auth/pages/LoginPage";
 import { LogoutPage } from "./components/auth/pages/LogoutPage";
 
 export const Home = () => {
-
-    const { login, handlerLogin, handlerLogout } = useAuth ();
-    console.log ("login: ", login);
+    console.log ("Home.jsx Amaneciendo");
+    const { login, handlerLogin, handlerLogout, handlerSession } = useAuth ();
+    console.log ("Home.jsx login: ", login);
 
 
 
@@ -20,7 +20,7 @@ export const Home = () => {
                 ? (
                     <>
                         Esta logeado
-                        <LogoutPage handlerLogout={ handlerLogout }/>
+                        <LogoutPage handlerLogout={ handlerLogout} handlerSession={handlerSession}  />
                     </>
                 )
                 : <>No esta logeado
