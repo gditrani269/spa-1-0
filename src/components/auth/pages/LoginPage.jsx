@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 export const LoginPage = ({ handlerLogin }) => {
+
+//    console.log ("LoginPage")
+
     //handlerLogin ({username: 'admin', password: '12345'})
 
     const [values, setValues] = useState({
@@ -34,8 +37,17 @@ export const LoginPage = ({ handlerLogin }) => {
             [name]: value,
         };
         setInData(newValues);
+
+        const date = new Date();
+        const showTime = date.getHours() 
+        + ':' + date.getMinutes() 
+        + ":" + date.getSeconds();
+        console.log ("Hora: ", showTime);
+        console.log ("values: ", values);
+        handlerLogin ({username: values.email, password: values.password})
+
         //handlerLogin ({username: 'admin', password: '12345'})
-        handlerLogin (values)
+
 
         //reiniciar los datos del formulario
         //setLoginForm (initialLoginForm);
@@ -46,11 +58,17 @@ export const LoginPage = ({ handlerLogin }) => {
           target es el elemento que ejecuto el evento
           name identifica el input y value describe el valor actual
         */
+
+//        console.log (target.value)
+
         const { name, value } = target;
         setValues ({
             ...values,
             [name]: value,
         })
+
+//        console.log ("values: ", values);
+
     }
 
     return (

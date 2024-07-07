@@ -8,6 +8,6 @@ import { UserForm } from './components/auth/pages/UseForm'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Home />
-    <UserForm />
+    {/*<UserForm />*/}
   </React.StrictMode>,
 )
