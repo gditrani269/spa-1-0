@@ -10,3 +10,5 @@ Currently, two official plugins are available:
 
 se instala sweetalert
 npm install sweetalert2
+
+nada
