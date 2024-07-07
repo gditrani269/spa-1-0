@@ -4,13 +4,10 @@ import { LoginPage } from "./components/auth/pages/LoginPage";
 import { LogoutPage } from "./components/auth/pages/LogoutPage";
 
 export const Home = () => {
+
     console.log ("Home.jsx Amaneciendo");
     const { login, handlerLogin, handlerLogout, handlerSession } = useAuth ();
     console.log ("Home.jsx login: ", login);
-
-
-
-
 
     return (
         <>

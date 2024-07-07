@@ -1,5 +1,6 @@
 import { useReducer} from 'react';
 import { loginReducer } from '../reducers/loginReducers';
+
 import Swal from 'sweetalert2'
 
 /*
@@ -81,14 +82,18 @@ const initialStocks = [
     }
 ];
 
+import { loginUser } from '../../../auth/services/authService';
+import Swal from 'sweetalert2';
+
+
 const initialLogin = JSON.parse (sessionStorage.getItem ('login')) || {
     isAuth: false,
     user: undefined,
-    varios: '',
 }
 
 export const useAuth = ()  => {
     const [login, dispatch] = useReducer (loginReducer, initialLogin);
+
 
     console.log ("useAuth: login ", login)
     const handlerLogin = ({username, password}) => {
@@ -115,6 +120,7 @@ export const useAuth = ()  => {
                    // varios: showTime,
                 }));
             }
+
         } else {
             Swal.fire ('Error login', 'Username y/o ppasword invalidos', 'error');
         }

@@ -1,11 +1,13 @@
 import { useState } from "react";
 
 export const LoginPage = ({ handlerLogin }) => {
+
 //    console.log ("LoginPage")
+
     //handlerLogin ({username: 'admin', password: '12345'})
 
     const [values, setValues] = useState({
-        email: "",
+        user: "",
         password: "",
     });
 
@@ -27,15 +29,15 @@ export const LoginPage = ({ handlerLogin }) => {
           formularios el cual recarga el sitio
         */
         event.preventDefault();
-        console.log ("ca ta");
         const { target } = event;
-        console.log ("target: ", target)
+        //console.log ("target: ", target)
         const { name, value } = target;
         const newValues = {
             ...values,
             [name]: value,
         };
         setInData(newValues);
+
         const date = new Date();
         const showTime = date.getHours() 
         + ':' + date.getMinutes() 
@@ -43,6 +45,9 @@ export const LoginPage = ({ handlerLogin }) => {
         console.log ("Hora: ", showTime);
         console.log ("values: ", values);
         handlerLogin ({username: values.email, password: values.password})
+
+        //handlerLogin ({username: 'admin', password: '12345'})
+
 
         //reiniciar los datos del formulario
         //setLoginForm (initialLoginForm);
@@ -53,13 +58,17 @@ export const LoginPage = ({ handlerLogin }) => {
           target es el elemento que ejecuto el evento
           name identifica el input y value describe el valor actual
         */
+
 //        console.log (target.value)
+
         const { name, value } = target;
         setValues ({
             ...values,
             [name]: value,
         })
+
 //        console.log ("values: ", values);
+
     }
 
     return (
@@ -67,12 +76,12 @@ export const LoginPage = ({ handlerLogin }) => {
             Soy la login page
             <form onSubmit={ onSubmit }>
                 <div className="modal-footer">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="user">Username</label>
                 <input
-                    id="email"
-                    name="email"
+                    id="user"
+                    name="user"
                     type="text"
-                    value={values.email}
+                    value={values.user}
                     onChange={handleChange}
                 />
                 <label htmlFor="password">Password</label>
