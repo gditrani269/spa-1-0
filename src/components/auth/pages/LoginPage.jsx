@@ -11,66 +11,30 @@ export const LoginPage = ({ handlerLogin }) => {
         password: "",
     });
 
-    const [inData, setInData ] = useState ({
-        email: "",
-        password: "",
-    });
-
     const onSubmit = (event) => {
         event.preventDefault (); //esto es para que no se recargue la pagian cuandose pulsa el boton
-     /*   if (!username || !password) {
-            Swal.fire ('Error de validacion', 'Username y ppasword requeridos', 'error');
-        }*/
+
         //aca implementamos el login
         //handlerLogin ({username, password});
 
-        /*
-          Previene el comportamiento default de los
-          formularios el cual recarga el sitio
-        */
-        event.preventDefault();
         const { target } = event;
         //console.log ("target: ", target)
-        const { name, value } = target;
-        const newValues = {
-            ...values,
-            [name]: value,
-        };
-        setInData(newValues);
 
-        const date = new Date();
-        const showTime = date.getHours() 
-        + ':' + date.getMinutes() 
-        + ":" + date.getSeconds();
-        console.log ("Hora: ", showTime);
         console.log ("values: ", values);
-        handlerLogin ({username: values.email, password: values.password})
-        //handlerLogin ({username: 'admin', password: '12345'})
-        handlerLogin (values)
-
-        //handlerLogin ({username: 'admin', password: '12345'})
-
+        handlerLogin ({username: values.user, password: values.password})
 
         //reiniciar los datos del formulario
         //setLoginForm (initialLoginForm);
     }
 
     const handleChange = ({target}) => {
-        /*
-          target es el elemento que ejecuto el evento
-          name identifica el input y value describe el valor actual
-        */
-
-//        console.log (target.value)
-
+        /*  target es el elemento que ejecuto el evento
+          name identifica el input y value describe el valor actual */
         const { name, value } = target;
         setValues ({
             ...values,
             [name]: value,
         })
-
-//        console.log ("values: ", values);
-
     }
 
     return (

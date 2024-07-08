@@ -82,9 +82,6 @@ const initialStocks = [
     }
 ];
 
-import { loginUser } from '../../../auth/services/authService';
-import Swal from 'sweetalert2';
-
 
 const initialLogin = JSON.parse (sessionStorage.getItem ('login')) || {
     isAuth: false,
