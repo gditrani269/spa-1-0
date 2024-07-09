@@ -2,10 +2,6 @@ import { useState } from "react";
 
 export const LoginPage = ({ handlerLogin }) => {
 
-//    console.log ("LoginPage")
-
-    //handlerLogin ({username: 'admin', password: '12345'})
-
     const [values, setValues] = useState({
         user: "",
         password: "",
@@ -13,16 +9,11 @@ export const LoginPage = ({ handlerLogin }) => {
 
     const onSubmit = (event) => {
         event.preventDefault (); //esto es para que no se recargue la pagian cuandose pulsa el boton
-
         //aca implementamos el login
-        //handlerLogin ({username, password});
-
-        const { target } = event;
+        //const { target } = event;
         //console.log ("target: ", target)
-
-        console.log ("values: ", values);
+        //console.log ("values: ", values);
         handlerLogin ({username: values.user, password: values.password})
-
         //reiniciar los datos del formulario
         //setLoginForm (initialLoginForm);
     }

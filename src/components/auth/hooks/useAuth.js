@@ -91,15 +91,12 @@ const initialLogin = JSON.parse (sessionStorage.getItem ('login')) || {
 export const useAuth = ()  => {
     const [login, dispatch] = useReducer (loginReducer, initialLogin);
 
-
-    console.log ("useAuth: login ", login)
+//    console.log ("useAuth: login ", login)
     const handlerLogin = ({username, password}) => {
-        console.log ("handlerLogin")
-        console.log ("user: ", username , " pass: ", password);
+//        console.log ("handlerLogin")
+//        console.log ("user: ", username , " pass: ", password);
         if ((username === 'admin' && password === '12345') || (username === 'ger' && password === 'ger')) {
-            const isLogin = true; //loginUser ({username, password});
 
-            if  (isLogin) {
                 const date = new Date();
                 const showTime = date.getHours() 
                 + ':' + date.getMinutes() 
@@ -116,8 +113,6 @@ export const useAuth = ()  => {
                     user: user,
                    // varios: showTime,
                 }));
-            }
-
         } else {
             Swal.fire ('Error login', 'Username y/o ppasword invalidos', 'error');
         }
@@ -160,17 +155,9 @@ export const useAuth = ()  => {
         console.log ("TERMINA handlerSession")
     }
 
+    //funcion que simplemente carga algo en la sesion a modo de ejemplo
     function sasa (user, varios) {
-        console.log ("sasa ", user , " ", varios)
-        const date = new Date();
-        const showTime = date.getHours() 
-        + ':' + date.getMinutes() 
-        + ":" + date.getSeconds();
-   /*     const user2 = { user: user, varios: showTime}
-        dispatch ({
-            type: 'login',
-            payload: user2,  
-        });*/
+//        console.log ("sasa ", user , " ", varios)
         const userF = { user: user, varios: initialStocks}
         sessionStorage.setItem ('login', JSON.stringify ({
             isAuth: true,

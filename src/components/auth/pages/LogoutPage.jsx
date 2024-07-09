@@ -29,7 +29,7 @@ export const LogoutPage = ({ handlerLogout, handlerSession }) => {
                 <div className="modal-footer">
                     <button  className="btn btn-primary"
                         type="submit">
-                        onSession
+                        funcion para agregar cosas en la sesion
                     </button>
                 </div>
             </form>     
